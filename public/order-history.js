@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000';
+const API_BASE = '';
 
 // Status → human-readable label + track step index (0-based)
 const STATUS_CONFIG = {

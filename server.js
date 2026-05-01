@@ -12,10 +12,12 @@ const app = express();
 
 const ALLOWED_ORIGINS = [
   'http://localhost:3000',
-  'http://localhost:63342', // JetBrains IDE built-in server
-  'http://localhost:5500',  // VS Code Live Server
+  'http://localhost:63342',
+  'http://localhost:5500',
   'http://127.0.0.1:5500',
-  'http://localhost:5173',  // Vite
+  'http://localhost:5173',
+  'https://dresstheday-production.up.railway.app',
+  'https://dresstheday.style',
 ];
 
 app.use(cors({

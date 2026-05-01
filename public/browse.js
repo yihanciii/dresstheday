@@ -1,4 +1,4 @@
-const API_BASE = 'http://localhost:3000';
+const API_BASE = '';
 const ITEMS_PER_PAGE = 8;
 
 const PAGE_FILENAME = window.location.pathname.split('/').pop() || 'index.html';
