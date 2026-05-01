@@ -1,0 +1,329 @@
+/* ── Checkout Layout: 2 columns ───────────────────
+   [form / left]  |  [order summary / right]
+   ──────────────────────────────────────────────── */
+.checkout-layout {
+    display: grid;
+    grid-template-columns: 1fr 380px;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 48px auto 80px;
+    padding: 0 40px;
+    align-items: start;
+}
+
+/* ── Section Headings ──────────────────────────── */
+.checkout-section > h2,
+.delivery-section > h2 {
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 28px;
+}
+.delivery-section { margin-top: 40px; }
+.delivery-section > h2 { margin-bottom: 20px; }
+
+/* ── Form ──────────────────────────────────────── */
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+.form-row--3 {
+    grid-template-columns: 2fr 1fr 1fr;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+}
+
+/* Hide label visually — placeholder acts as label */
+.form-label {
+    font-size: 11px;
+    font-weight: 400;
+    color: var(--text-light);
+    letter-spacing: 0.04em;
+    margin-bottom: 4px;
+    display: none;
+}
+
+.form-input {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 300;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color var(--transition);
+}
+.form-input::placeholder {
+    color: var(--text-light);
+    font-weight: 300;
+}
+.form-input:focus {
+    border-color: var(--brown-dark);
+}
+
+/* ── Delivery Options ──────────────────────────── */
+.delivery-option {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+    transition: background var(--transition);
+}
+.delivery-option:first-of-type { border-top: 1px solid var(--border); }
+
+.delivery-option-left {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+/* Hide the native radio button */
+.delivery-option input[type="radio"] {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+/* Custom radio indicator */
+.delivery-radio-indicator {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    border: 1.5px solid var(--border);
+    background: var(--cream);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    transition: all var(--transition);
+}
+.delivery-radio-indicator svg {
+    opacity: 0;
+    color: #fffdf7;
+    transition: opacity var(--transition);
+}
+
+/* When radio is checked — style the indicator */
+.delivery-option input[type="radio"]:checked ~ .delivery-radio-indicator,
+.delivery-option:has(input[type="radio"]:checked) .delivery-radio-indicator {
+    background: var(--brown-dark);
+    border-color: var(--brown-dark);
+}
+.delivery-option:has(input[type="radio"]:checked) .delivery-radio-indicator svg {
+    opacity: 1;
+}
+
+.delivery-info { display: flex; flex-direction: column; gap: 2px; }
+.delivery-name {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+.delivery-days {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-light);
+}
+.delivery-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+/* ── Place Order Button ────────────────────────── */
+.place-order-btn {
+    width: 100%;
+    padding: 18px;
+    background: var(--brown-dark);
+    color: #fffdf7;
+    font-family: var(--font-sans);
+    font-size: 16px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    margin-top: 32px;
+    transition: background var(--transition);
+}
+.place-order-btn:hover { background: var(--brown-mid); }
+
+/* ── Order Summary Card ────────────────────────── */
+.order-summary {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    background: var(--cream);
+}
+.order-summary-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+/* Order item row */
+.order-item {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 16px;
+}
+.order-img-placeholder {
+    width: 80px;
+    height: 107px; /* 3:4 ratio */
+    flex-shrink: 0;
+    background: linear-gradient(160deg, #ddd6cc 0%, #c0b4a0 100%);
+    border-radius: 4px;
+}
+.order-item-info {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    flex: 1;
+}
+.order-item-name {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.order-item-detail {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--text-dark);
+    line-height: 1.5;
+}
+.order-item-qty-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+}
+.order-qty {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--text-dark);
+}
+.order-price {
+    font-size: 14px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.order-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 16px 0;
+}
+
+/* Totals */
+.order-totals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.order-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text-dark);
+}
+.order-total-final {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-top: 4px;
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 800px) {
+    .checkout-layout {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        margin-top: 32px;
+    }
+    /* Show order summary first on mobile */
+    .checkout-right { order: -1; }
+    .form-row { grid-template-columns: 1fr 1fr; }
+    .form-row--3 { grid-template-columns: 1fr; }
+}
+@media (max-width: 480px) {
+    .form-row { grid-template-columns: 1fr; }
+}
+
+/* ── Payment Method Section ────────────────────── */
+.payment-section { margin-top: 40px; }
+.payment-section .form-group,
+.payment-section .form-row { margin-bottom: 16px; }
+.payment-section .form-row:last-of-type,
+.payment-section .form-group:last-of-type { margin-bottom: 0; }
+.payment-section > h2 {
+    font-size: clamp(20px, 2.5vw, 26px);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 20px;
+}
+
+.card-icons {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 20px;
+}
+.card-icons img {
+    height: 26px;
+    width: auto;
+    border-radius: 4px;
+    border: 1px solid var(--border);
+}
+
+.card-input-wrap {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+.card-input-wrap .form-input { padding-right: 40px; }
+
+.card-brand-icon {
+    position: absolute;
+    right: 12px;
+    font-size: 16px;
+    pointer-events: none;
+}
+
+.cvv-tooltip {
+    position: absolute;
+    right: 12px;
+    color: var(--text-light);
+    cursor: help;
+    display: flex;
+    align-items: center;
+}
+
+.secure-notice {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 12px;
+    color: var(--text-light);
+    margin-top: 14px;
+}
+.secure-notice svg { flex-shrink: 0; }

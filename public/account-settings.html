@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account – Settings – Dress the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="account.css" />
+    <link rel="stylesheet" href="chat-widget.css" />
+</head>
+<body>
+
+<div class="announcement" role="banner">
+    $15 Off on First Order; Free Shipping
+</div>
+
+<header class="site-header" role="banner">
+    <div class="header-top">
+        <div class="site-logo">
+            <a href="index.html">
+                <h1>Dress the Day</h1>
+                <p class="tagline">- Rent the Moment -</p>
+            </a>
+        </div>
+        <nav class="header-icons" aria-label="Utility navigation">
+
+            <div class="search-wrapper">
+                <button aria-label="Search" id="search-toggle">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                    </svg>
+                </button>
+                <div class="search-dropdown" role="search">
+                    <input class="search-input" type="text" placeholder="Search styles…" aria-label="Search"/>
+                    <button class="search-submit" aria-label="Submit search">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <a href="cart.html" aria-label="Shopping cart">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </a>
+
+            <a href="login.html" aria-label="Account" id="account-icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+
+        </nav>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul role="list">
+            <li><a href="browse-all.html">Browse All</a></li>
+            <li><a href="holiday-party.html">Holiday &amp; Party</a></li>
+            <li><a href="cultural-traditional.html">Cultural &amp; Traditional</a></li>
+            <li><a href="wedding-formal.html">Wedding &amp; Formal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="account-layout">
+
+        <aside class="account-sidebar">
+            <!-- BACKEND: user.first_name + user.last_name → update via JS once DB connected -->
+            <h2 class="sidebar-username" id="sidebar-username">My Account</h2>
+            <hr class="sidebar-divider" />
+            <nav class="sidebar-nav" aria-label="Account navigation">
+                <a href="account-information.html" class="sidebar-link">Information</a>
+                <a href="account-wishlist.html" class="sidebar-link">Wishlist</a>
+                <a href="account-returns.html" class="sidebar-link">Returns</a>
+                <a href="account-orders.html" class="sidebar-link">Order History</a>
+                <a href="account-settings.html" class="sidebar-link active">Settings</a>
+            </nav>
+
+        </aside>
+
+        <div class="account-content">
+            <h2 class="account-page-title">Settings</h2>
+
+            <section class="settings-section" aria-labelledby="password-heading">
+                <h3 class="settings-section__title" id="password-heading">Password</h3>
+                <div class="settings-card">
+                    <div class="settings-row settings-row--full">
+                        <div class="settings-field">
+                            <p class="settings-label">Current Password</p>
+                            <p class="settings-value settings-value--masked">••••••••••••</p>
+                        </div>
+                    </div>
+                    <div class="settings-card__footer">
+                        <button class="settings-edit-btn">Change Password</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="settings-section" aria-labelledby="notif-heading">
+                <h3 class="settings-section__title" id="notif-heading">Notifications</h3>
+                <div class="settings-card">
+                    <div class="settings-toggle-row">
+                        <div class="settings-toggle__info">
+                            <p class="settings-toggle__label">Return Reminders</p>
+                            <p class="settings-toggle__sub">Get notified before your rental is due</p>
+                        </div>
+                        <label class="toggle-switch" aria-label="Return Reminders">
+                            <input type="checkbox" checked />
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                    <div class="settings-divider"></div>
+                    <div class="settings-toggle-row">
+                        <div class="settings-toggle__info">
+                            <p class="settings-toggle__label">Order Updates</p>
+                            <p class="settings-toggle__sub">Shipping and delivery status</p>
+                        </div>
+                        <label class="toggle-switch" aria-label="Order Updates">
+                            <input type="checkbox" checked />
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                    <div class="settings-divider"></div>
+                    <div class="settings-toggle-row">
+                        <div class="settings-toggle__info">
+                            <p class="settings-toggle__label">Promotions &amp; Offers</p>
+                            <p class="settings-toggle__sub">Deals, discounts and new arrivals</p>
+                        </div>
+                        <label class="toggle-switch" aria-label="Promotions and Offers">
+                            <input type="checkbox" />
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                    <div class="settings-divider"></div>
+                    <div class="settings-toggle-row">
+                        <div class="settings-toggle__info">
+                            <p class="settings-toggle__label">Wishlist Availability</p>
+                            <p class="settings-toggle__sub">When a saved item becomes available</p>
+                        </div>
+                        <label class="toggle-switch" aria-label="Wishlist Availability">
+                            <input type="checkbox" checked />
+                            <span class="toggle-track"><span class="toggle-thumb"></span></span>
+                        </label>
+                    </div>
+                </div>
+            </section>
+
+            <section class="settings-section" aria-labelledby="account-heading">
+                <h3 class="settings-section__title settings-section__title--danger" id="account-heading">Account</h3>
+                <div class="settings-card">
+                    <div class="settings-danger-row">
+                        <div>
+                            <p class="settings-toggle__label">Sign Out</p>
+                            <p class="settings-toggle__sub">Sign out of your account on this device</p>
+                        </div>
+                        <button class="settings-edit-btn" onclick="handleLogout()">Sign Out</button>
+                    </div>
+                </div>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+        <nav class="footer-col" aria-label="Explore links">
+            <h3>Explore</h3>
+            <ul>
+                <li><span>How It Works</span></li>
+                <li><span>Refer Friends</span></li>
+                <li><span>Gift Cards</span></li>
+                <li><span>Student Discount</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company links">
+            <h3>Company</h3>
+            <ul>
+                <li><span>Our Story</span></li>
+                <li><span>Sustainability</span></li>
+                <li><span>Careers</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Help links">
+            <h3>Get Help</h3>
+            <ul>
+                <li><span>FAQs</span></li>
+                <li><span>Contact Us</span></li>
+                <li><span>Size Guide</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Shop links">
+            <h3>Shop</h3>
+            <ul>
+                <li><span>Holiday &amp; Party</span></li>
+                <li><span>Cultural &amp; Traditional</span></li>
+                <li><span>Wedding &amp; Formal</span></li>
+                <li><span>Browse All</span></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026. All rights reserved.</span>
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('search-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrapper = e.currentTarget.closest('.search-wrapper');
+        wrapper.classList.toggle('open');
+        if (wrapper.classList.contains('open')) {
+            wrapper.querySelector('.search-input').focus();
+        }
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.search-wrapper.open')
+            .forEach(w => w.classList.remove('open'));
+    });
+</script>
+
+    <script src="chat-widget.js"></script>
+<script>
+  (function() {
+    try {
+      var user = JSON.parse(localStorage.getItem('dtd_user') || '{}');
+      var firstName = user.firstName || '';
+      var lastName  = user.lastName  || '';
+      var email     = user.email     || '';
+
+      // 1. Sidebar username: "First Last" or fallback to "My Account"
+      var nameEl = document.getElementById('sidebar-username');
+      if (nameEl && firstName) {
+        nameEl.textContent = (firstName + (lastName ? ' ' + lastName : '')).trim();
+      }
+
+      // 2. Account icon: show initial circle if logged in
+      var link = document.getElementById('account-icon-link');
+      if (link && firstName) {
+        var initial = firstName.charAt(0).toUpperCase();
+        link.href = 'account-information.html';
+        link.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5c3d2e;color:#fff;font-size:13px;font-weight:600;font-family:inherit;line-height:1;cursor:pointer;">' + initial + '</span>';
+      }
+    } catch(e) {}
+  })();
+</script>
+<script>
+  async function handleLogout() {
+    try {
+      await fetch('http://localhost:3000/api/users/logout', {
+        method: 'POST',
+        credentials: 'include',
+      });
+    } catch(e) {}
+    localStorage.removeItem('dtd_user');
+    window.location.href = 'login.html';
+  }
+</script>
+</body>
+
+</html>

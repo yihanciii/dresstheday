@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account – Order History – Dress the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="account.css" />
+    <link rel="stylesheet" href="chat-widget.css" />
+</head>
+<body>
+
+<div class="announcement" role="banner">
+    $15 Off on First Order; Free Shipping
+</div>
+
+<header class="site-header" role="banner">
+    <div class="header-top">
+        <div class="site-logo">
+            <a href="index.html">
+                <h1>Dress the Day</h1>
+                <p class="tagline">- Rent the Moment -</p>
+            </a>
+        </div>
+        <nav class="header-icons" aria-label="Utility navigation">
+
+            <div class="search-wrapper">
+                <button aria-label="Search" id="search-toggle">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                    </svg>
+                </button>
+                <div class="search-dropdown" role="search">
+                    <input class="search-input" type="text" placeholder="Search styles…" aria-label="Search"/>
+                    <button class="search-submit" aria-label="Submit search">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <a href="cart.html" aria-label="Shopping cart">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </a>
+
+            <a href="login.html" aria-label="Account" id="account-icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+
+        </nav>
+    </div>
+
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul role="list">
+            <li><a href="browse-all.html">Browse All</a></li>
+            <li><a href="holiday-party.html">Holiday &amp; Party</a></li>
+            <li><a href="cultural-traditional.html">Cultural &amp; Traditional</a></li>
+            <li><a href="wedding-formal.html">Wedding &amp; Formal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="account-layout">
+
+        <aside class="account-sidebar">
+            <!-- BACKEND: user.first_name + user.last_name → update via JS once DB connected -->
+            <h2 class="sidebar-username" id="sidebar-username">My Account</h2>
+            <hr class="sidebar-divider" />
+            <nav class="sidebar-nav" aria-label="Account navigation">
+                <a href="account-information.html" class="sidebar-link">Information</a>
+                <a href="account-wishlist.html" class="sidebar-link">Wishlist</a>
+                <a href="account-returns.html" class="sidebar-link">Returns</a>
+                <a href="account-orders.html" class="sidebar-link active">Order History</a>
+                <a href="account-settings.html" class="sidebar-link">Settings</a>
+            </nav>
+
+
+
+        </aside>
+
+        <div class="account-content">
+            <h2 class="account-page-title">Order History</h2>
+
+            <div class="oh-heading-row">
+                <p class="returns-subtitle">2 orders</p>
+                <div class="oh-filter-tabs" role="group" aria-label="Filter orders">
+                    <button class="oh-tab oh-tab--active">All</button>
+                    <button class="oh-tab">Active</button>
+                    <button class="oh-tab">Completed</button>
+                </div>
+            </div>
+            <ul class="oh-list" aria-label="Orders">
+
+                <li class="oh-order">
+                    <div class="oh-summary">
+                        <div class="oh-summary__img">
+                            <div class="item-img-placeholder"></div>
+                        </div>
+                        <div class="oh-summary__info">
+                            <p class="item-name">Alchemy Ruffle Mini Dress</p>
+                            <p class="item-detail">SIZE: 2</p>
+                            <p class="item-detail">Order: #DT-20261</p>
+                            <p class="item-detail">Price: $200</p>
+                            <p class="item-detail">Mar 23 – Apr 2, 2026</p>
+                        </div>
+                        <div class="oh-summary__right">
+                            <!-- BACKEND: due-badge--urgent if days_left <= 3 -->
+                            <span class="due-badge due-badge--urgent">Due in 2 days</span>
+                            <!-- JS teammate: toggle .oh-order--open on click -->
+                            <button class="oh-chevron" aria-label="Toggle order details">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="oh-tabs" role="tablist">
+                        <button class="oh-subtab oh-subtab--active" role="tab">Track Order</button>
+                        <button class="oh-subtab" role="tab">Extend Rental</button>
+                    </div>
+                    <div class="oh-panel oh-panel--track">
+                        <ol class="track-steps">
+                            <li class="track-step track-step--done">
+                                <span class="track-icon track-icon--check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                <div class="track-text"><p class="track-label">Order confirmed</p><p class="track-time">Feb 1, 2026 · 10:24 am</p></div>
+                            </li>
+                            <li class="track-step track-step--done">
+                                <span class="track-icon track-icon--check"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg></span>
+                                <div class="track-text"><p class="track-label">Garment dry-cleaned &amp; dispatched</p><p class="track-time">Mar 20, 2026 · 2:00pm — shipped via DHL</p></div>
+                            </li>
+                            <li class="track-step track-step--active">
+                                <span class="track-icon track-icon--ring"></span>
+                                <div class="track-text"><p class="track-label track-label--accent">With you — return due Apr 2</p><p class="track-time">Delivered Mar 23</p></div>
+                            </li>
+                            <li class="track-step track-step--pending">
+                                <span class="track-icon track-icon--empty"></span>
+                                <div class="track-text"><p class="track-label track-label--muted">Returned &amp; completed</p><p class="track-time track-label--muted">Pending</p></div>
+                            </li>
+                        </ol>
+                    </div>
+                </li>
+
+                <li class="oh-order oh-order--open">
+                    <div class="oh-summary">
+                        <div class="oh-summary__img"><div class="item-img-placeholder"></div></div>
+                        <div class="oh-summary__info">
+                            <p class="item-name">Luna Wool Silk Tailored Short</p>
+                            <p class="item-detail">SIZE: 0</p>
+                            <p class="item-detail">Order: #DT-20371</p>
+                            <p class="item-detail">Price: $300</p>
+                            <p class="item-detail">Mar 25 – Apr 7, 2026</p>
+                        </div>
+                        <div class="oh-summary__right">
+                            <span class="due-badge due-badge--ok">Due in 7 days</span>
+                            <button class="oh-chevron" aria-label="Toggle order details">
+                                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="6 9 12 15 18 9"/></svg>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="oh-tabs" role="tablist">
+                        <button class="oh-subtab" role="tab">Track Order</button>
+                        <button class="oh-subtab oh-subtab--active" role="tab">Extend Rental</button>
+                    </div>
+                    <div class="oh-panel oh-panel--extend">
+                        <div class="extend-row">
+                            <p class="extend-label">Current Return Date</p>
+                            <p class="extend-date">Apr 7, 2026</p>
+                        </div>
+                        <div class="extend-row">
+                            <p class="extend-label">Extend By</p>
+                            <div class="extend-options" role="group">
+                                <button class="extend-opt"><span class="extend-opt__days">+3 days</span><span class="extend-opt__price">$50.00</span></button>
+                                <button class="extend-opt extend-opt--selected"><span class="extend-opt__days">+5 days</span><span class="extend-opt__price">$75.00</span></button>
+                                <button class="extend-opt"><span class="extend-opt__days">+7 days</span><span class="extend-opt__price">$100.00</span></button>
+                                <button class="extend-opt"><span class="extend-opt__days">+30 days</span><span class="extend-opt__price">$500.00</span></button>
+                            </div>
+                        </div>
+                        <div class="extend-summary">
+                            <p class="extend-summary__label">Summary</p>
+                            <div class="extend-summary__row"><span class="extend-summary__key">New Return Date</span><span class="extend-summary__val">Apr 12, 2026</span></div>
+                            <div class="extend-summary__row"><span class="extend-summary__key">Total Extension Fee</span><span class="extend-summary__val">$75.00</span></div>
+                        </div>
+                        <div class="extend-notice">Extending your rental cancels the scheduled shipping on <strong>Apr 7</strong></div>
+                        <div class="extend-actions">
+                            <button class="btn-outline">Cancel</button>
+                            <button class="btn-solid">Confirm Extension</button>
+                        </div>
+                    </div>
+                </li>
+
+            </ul>
+
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+        <nav class="footer-col" aria-label="Explore links">
+            <h3>Explore</h3>
+            <ul>
+                <li><span>How It Works</span></li>
+                <li><span>Refer Friends</span></li>
+                <li><span>Gift Cards</span></li>
+                <li><span>Student Discount</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company links">
+            <h3>Company</h3>
+            <ul>
+                <li><span>Our Story</span></li>
+                <li><span>Sustainability</span></li>
+                <li><span>Careers</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Help links">
+            <h3>Get Help</h3>
+            <ul>
+                <li><span>FAQs</span></li>
+                <li><span>Contact Us</span></li>
+                <li><span>Size Guide</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Shop links">
+            <h3>Shop</h3>
+            <ul>
+                <li><span>Holiday &amp; Party</span></li>
+                <li><span>Cultural &amp; Traditional</span></li>
+                <li><span>Wedding &amp; Formal</span></li>
+                <li><span>Browse All</span></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026. All rights reserved.</span>
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+    </div>
+</footer>
+<script src="order-history.js"></script>
+
+<script>
+    document.getElementById('search-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrapper = e.currentTarget.closest('.search-wrapper');
+        wrapper.classList.toggle('open');
+        if (wrapper.classList.contains('open')) {
+            wrapper.querySelector('.search-input').focus();
+        }
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.search-wrapper.open')
+            .forEach(w => w.classList.remove('open'));
+    });
+</script>
+
+    <script src="chat-widget.js"></script>
+<script>
+  (function() {
+    try {
+      var user = JSON.parse(localStorage.getItem('dtd_user') || '{}');
+      var firstName = user.firstName || '';
+      var lastName  = user.lastName  || '';
+      var email     = user.email     || '';
+
+      // 1. Sidebar username: "First Last" or fallback to "My Account"
+      var nameEl = document.getElementById('sidebar-username');
+      if (nameEl && firstName) {
+        nameEl.textContent = (firstName + (lastName ? ' ' + lastName : '')).trim();
+      }
+
+      // 2. Account icon: show initial circle if logged in
+      var link = document.getElementById('account-icon-link');
+      if (link && firstName) {
+        var initial = firstName.charAt(0).toUpperCase();
+        link.href = 'account-information.html';
+        link.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5c3d2e;color:#fff;font-size:13px;font-weight:600;font-family:inherit;line-height:1;cursor:pointer;">' + initial + '</span>';
+      }
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

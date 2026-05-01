@@ -1,0 +1,183 @@
+/* ── Heading row ───────────────────────────────────── */
+.wl-heading-row {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 16px;
+    margin-bottom: 28px;
+    flex-wrap: wrap;
+}
+
+/* ── Product grid ──────────────────────────────────── */
+.wl-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 16px;
+    list-style: none;
+}
+@media (max-width: 900px) {
+    .wl-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 480px) {
+    .wl-grid { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
+
+/* ── Wishlist card ─────────────────────────────────── */
+.wl-card {
+    background: var(--cream-warm);
+    border: 1.5px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: box-shadow var(--transition);
+}
+.wl-card:hover {
+    box-shadow: 0 4px 16px rgba(52, 29, 22, 0.08);
+}
+
+/* Image area */
+.wl-card__img {
+    position: relative;
+    aspect-ratio: 3 / 4;
+    background: #e8ddd4;
+    overflow: hidden;
+}
+
+
+.wl-img-placeholder {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(160deg, #ddd6cc 0%, #c0b4a0 100%);
+}
+
+.wl-card__img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s ease;
+}
+.wl-card:hover .wl-card__img img { transform: scale(1.04); }
+
+/* Remove (heart) button */
+.wl-remove-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(4px);
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    color: var(--accent);
+    transition: background var(--transition), transform var(--transition);
+}
+.wl-remove-btn:hover {
+    background: #fff;
+    transform: scale(1.1);
+}
+
+/* Unavailable badge overlay */
+.wl-unavailable-badge {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(52, 29, 22, 0.72);
+    color: #fffdf7;
+    font-size: 11px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    padding: 4px 12px;
+    border-radius: var(--radius-sm);
+    white-space: nowrap;
+    backdrop-filter: blur(4px);
+}
+
+/* Unavailable card — dim the image */
+.wl-card--unavailable .wl-card__img::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255, 253, 247, 0.45);
+}
+
+/* Card info area */
+.wl-card__info {
+    padding: 12px 14px 16px;
+}
+.wl-card__name {
+    font-size: 13.5px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.wl-card__brand {
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+.wl-card__price {
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 12px;
+}
+
+/* Rent Now button */
+.wl-rent-btn {
+    display: block;
+    width: 100%;
+    padding: 8px 0;
+    background: var(--brown-dark);
+    color: #fffdf7;
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    font-weight: 400;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+.wl-rent-btn:hover:not(:disabled) { background: var(--brown-mid); }
+.wl-rent-btn:disabled {
+    background: var(--border);
+    color: var(--text-light);
+    cursor: not-allowed;
+}
+
+/* ── Empty state ───────────────────────────────────── */
+.wl-empty {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 80px 20px;
+    text-align: center;
+}
+.wl-empty__text {
+    font-size: 15px;
+    font-weight: 300;
+    color: var(--text-light);
+}
+.wl-browse-btn {
+    display: inline-block;
+    padding: 10px 28px;
+    background: var(--brown-dark);
+    color: #fffdf7;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 400;
+    border-radius: var(--radius-sm);
+    transition: background var(--transition);
+}
+.wl-browse-btn:hover { background: var(--brown-mid); }

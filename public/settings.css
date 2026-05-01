@@ -1,0 +1,251 @@
+/* ── Page heading ──────────────────────────────────── */
+.settings-heading {
+    margin-bottom: 28px;
+}
+
+/* ── Section ───────────────────────────────────────── */
+.settings-section {
+    margin-bottom: 32px;
+}
+.settings-section__title {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+.settings-section__title--danger {
+    color: #c0392b;
+}
+
+/* ── Card ──────────────────────────────────────────── */
+.settings-card {
+    border: 1.5px solid var(--border);
+    border-radius: 12px;
+    background: #fff;
+    overflow: hidden;
+}
+
+/* ── Field rows ────────────────────────────────────── */
+.settings-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-bottom: 1.5px solid var(--border);
+}
+.settings-row--full {
+    grid-template-columns: 1fr;
+}
+/* 3-column row for city/state/zip */
+.settings-row:has(.settings-field:nth-child(3)) {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+.settings-field {
+    padding: 16px 20px;
+    border-right: 1.5px solid var(--border);
+}
+.settings-field:last-child { border-right: none; }
+
+.settings-label {
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    margin-bottom: 4px;
+    letter-spacing: 0.03em;
+}
+.settings-value {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark);
+}
+.settings-value--masked {
+    letter-spacing: 0.15em;
+    color: var(--text-light);
+}
+
+/* ── Card footer with edit button ──────────────────── */
+.settings-card__footer {
+    padding: 12px 20px;
+    display: flex;
+    justify-content: flex-end;
+    background: var(--cream-warm);
+}
+.settings-edit-btn {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--brown-mid);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px 0;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition);
+}
+.settings-edit-btn:hover { color: var(--brown-dark); }
+
+/* ── Toggle rows (notifications) ──────────────────── */
+.settings-toggle-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 20px;
+}
+.settings-toggle__info { flex: 1; }
+.settings-toggle__label {
+    font-size: 14px;
+    font-weight: 400;
+    color: var(--text-dark);
+    margin-bottom: 3px;
+}
+.settings-toggle__sub {
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-light);
+}
+.settings-divider {
+    height: 1.5px;
+    background: var(--border);
+    margin: 0 20px;
+}
+
+/* ── Toggle switch ─────────────────────────────────── */
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+.toggle-switch input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+.toggle-track {
+    display: block;
+    width: 44px;
+    height: 24px;
+    border-radius: 24px;
+    background: var(--border);
+    transition: background var(--transition);
+    position: relative;
+}
+.toggle-thumb {
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #fff;
+    transition: transform var(--transition);
+    box-shadow: 0 1px 3px rgba(0,0,0,0.15);
+}
+/* On state */
+.toggle-switch input:checked + .toggle-track {
+    background: var(--brown-dark);
+}
+.toggle-switch input:checked + .toggle-track .toggle-thumb {
+    transform: translateX(20px);
+}
+
+/* ── Danger zone row ───────────────────────────────── */
+.settings-danger-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    padding: 18px 20px;
+    flex-wrap: wrap;
+}
+.settings-delete-btn {
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 400;
+    color: #c0392b;
+    background: none;
+    border: 1.5px solid #c0392b;
+    border-radius: 8px;
+    padding: 8px 20px;
+    cursor: pointer;
+    transition: background var(--transition), color var(--transition);
+    white-space: nowrap;
+}
+.settings-delete-btn:hover {
+    background: #c0392b;
+    color: #fff;
+}
+
+/* ── Responsive ────────────────────────────────────── */
+@media (max-width: 600px) {
+    .settings-row { grid-template-columns: 1fr; }
+    .settings-row:has(.settings-field:nth-child(3)) { grid-template-columns: 1fr; }
+    .settings-field { border-right: none; }
+    .settings-danger-row { flex-direction: column; align-items: flex-start; }
+}
+
+/* ============================================================
+   Information page extras  (shared via settings.css)
+   ============================================================ */
+
+/* ── Avatar row ────────────────────────────────────── */
+.info-avatar-row {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 18px 20px;
+    flex-wrap: wrap;
+}
+.info-avatar {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--brown-mid);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+}
+.info-avatar__initials {
+    font-size: 22px;
+    font-weight: 700;
+    color: #fffdf7;
+    font-family: var(--font-sans);
+}
+.info-avatar img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+.info-avatar__meta {
+    flex: 1;
+    min-width: 0;
+}
+
+/* ── Style preference tags ─────────────────────────── */
+.info-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 6px;
+}
+.info-tag {
+    display: inline-block;
+    padding: 4px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    font-size: 12px;
+    font-weight: 400;
+    color: var(--text-mid);
+    background: var(--cream-warm);
+}
+
+/* ── Muted value variant ───────────────────────────── */
+.settings-value--muted {
+    color: var(--text-light);
+    font-size: 13px;
+}

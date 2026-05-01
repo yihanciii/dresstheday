@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Order Confirmed – Dress the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="checkout.css" />
+    <link rel="stylesheet" href="order-confirmation.css" />
+    <link rel="stylesheet" href="chat-widget.css" />
+</head>
+<body>
+
+<!-- ── Announcement Bar ─────────────────────────── -->
+<div class="announcement" role="banner">
+    $15 Off on First Order; Free Shipping
+</div>
+
+<!-- ── Site Header ──────────────────────────────── -->
+<header class="site-header" role="banner">
+    <div class="header-top">
+        <div class="site-logo">
+            <a href="index.html">
+                <h1>Dress the Day</h1>
+                <p class="tagline">- Rent the Moment -</p>
+            </a>
+        </div>
+        <nav class="header-icons" aria-label="Utility navigation">
+            <div class="search-wrapper">
+                <button aria-label="Search" id="search-toggle">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                    </svg>
+                </button>
+                <div class="search-dropdown" role="search">
+                    <input class="search-input" type="text" placeholder="Search styles…" aria-label="Search"/>
+                    <button class="search-submit" aria-label="Submit search">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <a href="cart.html" aria-label="Shopping cart">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </a>
+            <a href="login.html" aria-label="Account" id="account-icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+        </nav>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul role="list">
+            <li><a href="browse-all.html">Browse All</a></li>
+            <li><a href="holiday-party.html">Holiday &amp; Party</a></li>
+            <li><a href="cultural-traditional.html">Cultural &amp; Traditional</a></li>
+            <li><a href="wedding-formal.html">Wedding &amp; Formal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="confirmation-layout">
+
+        <!-- ── Left: Confirmation message ──────── -->
+        <div class="confirmation-left">
+
+            <div class="confirmation-title-row">
+                <div class="confirmation-icon-wrap">
+                    <svg width="22" height="22" viewBox="0 0 24 24" fill="none"
+                         stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="20 6 9 17 4 12"/>
+                    </svg>
+                </div>
+                <h1 class="confirmation-title">Order Confirmed!</h1>
+            </div>
+            <p class="confirmation-order-number">Order <span id="conf-order-number">#––</span></p>
+            <p class="confirmation-message">
+                Thank you for your order. Your item will arrive by
+                <strong id="conf-arrival-date">––</strong>.
+                A confirmation has been sent to your email.
+            </p>
+
+            <!-- What happens next -->
+            <div class="confirmation-steps">
+                <h3 class="confirmation-steps-title">What happens next</h3>
+                <ol class="confirmation-next-steps">
+                    <li>
+                        <span class="next-step-icon">✓</span>
+                        <div>
+                            <p class="next-step-label">Order confirmed</p>
+                            <p class="next-step-sub">We've received your order and are preparing your item.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="next-step-icon">→</span>
+                        <div>
+                            <p class="next-step-label">Dry-cleaned &amp; dispatched</p>
+                            <p class="next-step-sub">Your garment will be cleaned and shipped to you.</p>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="next-step-icon">○</span>
+                        <div>
+                            <p class="next-step-label">Enjoy your rental</p>
+                            <p class="next-step-sub">Return by <strong id="conf-return-date">––</strong> using the prepaid label.</p>
+                        </div>
+                    </li>
+                </ol>
+            </div>
+
+            <!-- CTA buttons -->
+            <div class="confirmation-actions">
+                <a href="account-orders.html" class="confirmation-btn confirmation-btn--primary">
+                    View My Orders
+                </a>
+                <a href="browse-all.html" class="confirmation-btn confirmation-btn--secondary">
+                    Keep Browsing
+                </a>
+            </div>
+
+        </div>
+
+        <!-- ── Right: Order Summary ──────────────── -->
+        <aside class="confirmation-right" aria-label="Order summary">
+            <div class="order-summary">
+                <h2 class="order-summary-title">Order Summary</h2>
+
+                <div class="order-item">
+                    <div class="order-item-img" id="conf-item-img">
+                        <div class="img-placeholder order-img-placeholder"></div>
+                    </div>
+                    <div class="order-item-info">
+                        <p class="order-item-name" id="conf-item-name">––</p>
+                        <p class="order-item-detail" id="conf-item-size">Size: ––</p>
+                        <p class="order-item-detail" id="conf-item-backup"></p>
+                        <p class="order-item-detail" id="conf-item-period">Rental period: ––</p>
+                        <div class="order-item-qty-price">
+                            <span class="order-qty">Quantity: 1</span>
+                            <span class="order-price" id="conf-item-price">––</span>
+                        </div>
+                    </div>
+                </div>
+
+                <hr class="order-divider" />
+
+                <div class="order-totals">
+                    <div class="order-total-row">
+                        <span>Subtotal:</span>
+                        <span id="conf-subtotal">––</span>
+                    </div>
+                    <div class="order-total-row">
+                        <span>Shipping:</span>
+                        <span id="conf-shipping">––</span>
+                    </div>
+                    <div class="order-total-row">
+                        <span>Tax (est.):</span>
+                        <span id="conf-tax">––</span>
+                    </div>
+                    <hr class="order-divider" />
+                    <div class="order-total-row order-total-final">
+                        <span>Total:</span>
+                        <span id="conf-total">––</span>
+                    </div>
+                </div>
+
+            </div>
+        </aside>
+
+    </div>
+</main>
+
+<!-- ── Footer ───────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+        <nav class="footer-col" aria-label="Explore links">
+            <h3>Explore</h3>
+            <ul>
+                <li><span>How It Works</span></li>
+                <li><span>Refer Friends</span></li>
+                <li><span>Gift Cards</span></li>
+                <li><span>Student Discount</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company links">
+            <h3>Company</h3>
+            <ul>
+                <li><span>Our Story</span></li>
+                <li><span>Sustainability</span></li>
+                <li><span>Careers</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Help links">
+            <h3>Get Help</h3>
+            <ul>
+                <li><span>FAQs</span></li>
+                <li><span>Contact Us</span></li>
+                <li><span>Size Guide</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Shop links">
+            <h3>Shop</h3>
+            <ul>
+                <li><span>Holiday &amp; Party</span></li>
+                <li><span>Cultural &amp; Traditional</span></li>
+                <li><span>Wedding &amp; Formal</span></li>
+                <li><span>Browse All</span></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026. All rights reserved.</span>
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+    </div>
+</footer>
+
+<script src="order-confirmation.js"></script>
+<script>
+    document.getElementById('search-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrapper = e.currentTarget.closest('.search-wrapper');
+        wrapper.classList.toggle('open');
+        if (wrapper.classList.contains('open')) {
+            wrapper.querySelector('.search-input').focus();
+        }
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.search-wrapper.open')
+            .forEach(w => w.classList.remove('open'));
+    });
+</script>
+
+    <script src="chat-widget.js"></script>
+<script>
+  (function() {
+    var link = document.getElementById('account-icon-link');
+    if (!link) return;
+    var raw = localStorage.getItem('dtd_user');
+    if (!raw) return;
+    try {
+      var user = JSON.parse(raw);
+      var initial = (user.firstName || user.email || '').charAt(0).toUpperCase();
+      if (!initial) return;
+      link.href = 'account-information.html';
+      link.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5c3d2e;color:#fff;font-size:13px;font-weight:600;font-family:inherit;line-height:1;cursor:pointer;">' + initial + '</span>';
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

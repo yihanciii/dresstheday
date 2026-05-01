@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Cart – Dress the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="chat-widget.css" />
+</head>
+<body>
+
+<!-- ── Announcement Bar ─────────────────────────── -->
+<div class="announcement" role="banner">
+    $15 Off on First Order; Free Shipping
+</div>
+
+<!-- ── Site Header ──────────────────────────────── -->
+<header class="site-header" role="banner">
+    <div class="header-top">
+        <div class="site-logo">
+            <a href="index.html">
+                <h1>Dress the Day</h1>
+                <p class="tagline">- Rent the Moment -</p>
+            </a>
+        </div>
+        <nav class="header-icons" aria-label="Utility navigation">
+
+            <div class="search-wrapper">
+                <button aria-label="Search" id="search-toggle">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                    </svg>
+                </button>
+                <div class="search-dropdown" role="search">
+                    <input class="search-input" type="text" placeholder="Search styles…" aria-label="Search"/>
+                    <button class="search-submit" aria-label="Submit search">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <a href="cart.html" aria-label="Shopping cart">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </a>
+
+            <!-- Account icon: goes to login if not signed in, account page if signed in -->
+            <a href="login.html" aria-label="Account" id="account-icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+
+        </nav>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul role="list">
+            <li><a href="browse-all.html">Browse All</a></li>
+            <li><a href="holiday-party.html">Holiday &amp; Party</a></li>
+            <li><a href="cultural-traditional.html">Cultural &amp; Traditional</a></li>
+            <li><a href="wedding-formal.html">Wedding &amp; Formal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="cart-layout">
+
+        <!-- ── Left: Cart Items ──────────────────── -->
+        <div class="cart-left">
+
+            <h2 class="cart-title">My Cart</h2>
+
+            <!-- BACKEND: loop over cartItems from database here -->
+            <div class="cart-item">
+                <div class="cart-item-img">
+                    <!-- BACKEND: replace with <img src="item.product.image_url" alt="item.product.name"> -->
+                    <div class="img-placeholder cart-img-placeholder"></div>
+                </div>
+                <div class="cart-item-details">
+                    <div class="cart-item-header">
+                        <div>
+                            <!-- BACKEND: item.product.name -->
+                            <p class="cart-item-scenario">Razele Dress</p>
+                            <!-- BACKEND: item.product.brand -->
+                            <p class="cart-item-brand">Reformation</p>
+                        </div>
+                        <!-- BACKEND: POST to /cart/remove/:id -->
+                        <button class="cart-remove-btn" aria-label="Remove item">
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+                                <line x1="18" y1="6" x2="6" y2="18"/>
+                                <line x1="6" y1="6" x2="18" y2="18"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <div class="cart-item-meta">
+                        <div class="cart-meta-row">
+                            <span class="cart-meta-label">Size:</span>
+                            <!-- BACKEND: item.size -->
+                            <span class="cart-meta-value">6</span>
+                        </div>
+                        <div class="cart-meta-row">
+                            <span class="cart-meta-label">Free Back Up Size:</span>
+                            <!-- BACKEND: item.backup_size -->
+                            <span class="cart-meta-value">8</span>
+                        </div>
+                        <div class="cart-meta-row">
+                            <span class="cart-meta-label">Arrival Date:</span>
+                            <!-- BACKEND: item.arrival_date -->
+                            <span class="cart-meta-value">April 1, 2026</span>
+                        </div>
+                        <div class="cart-meta-row">
+                            <span class="cart-meta-label">Return Date:</span>
+                            <!-- BACKEND: item.return_date -->
+                            <span class="cart-meta-value">April 5, 2026</span>
+                        </div>
+                        <div class="cart-meta-row">
+                            <span class="cart-meta-label">Rental Period:</span>
+                            <!-- BACKEND: item.rental_days + " days" -->
+                            <span class="cart-meta-value">5 days</span>
+                        </div>
+                    </div>
+
+                    <div class="cart-item-price-row">
+                        <!-- BACKEND: "Retail $" + item.product.retail_price -->
+                        <span class="cart-item-retail">Retail $378</span>
+                        <!-- BACKEND: "$" + item.rental_price (from pricing algorithm) -->
+                        <span class="cart-item-rental-price">$150</span>
+                    </div>
+                </div>
+            </div>
+            <!-- BACKEND: end forEach loop here -->
+
+            <hr class="cart-divider" />
+
+            <a href="browse-all.html" class="continue-shopping-link">
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <polyline points="15 18 9 12 15 6"/>
+                </svg>
+                Continue Shopping
+            </a>
+
+        </div>
+
+        <!-- ── Right: Order Summary ──────────────── -->
+        <aside class="cart-right" aria-label="Order summary">
+            <div class="order-summary">
+                <h2 class="order-summary-title">Order Summary</h2>
+
+                <div class="order-totals">
+                    <div class="order-total-row">
+                        <span>Subtotal:</span>
+                        <span>$150</span>
+                    </div>
+                    <div class="order-total-row">
+                        <span>Shipping:</span>
+                        <span>Free</span>
+                    </div>
+                    <div class="order-total-row">
+                        <span>Tax (est.):</span>
+                        <!-- BACKEND: "$" + tax -->
+                        <span>$12.69</span>
+                    </div>
+                </div>
+
+                <hr class="order-divider" />
+
+                <div class="order-total-final-row">
+                    <span class="order-total-label">Total:</span>
+                    <span class="order-total-amount">$162.69</span>
+                </div>
+
+
+                <!-- Changed from <a> to <button> so JS can intercept and check login -->
+                <button class="checkout-cta-btn" id="checkout-cta-btn">Proceed to Checkout</button>
+
+                <p class="payment-note">
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/>
+                        <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+                    </svg>
+                    Secure checkout
+                </p>
+            </div>
+        </aside>
+
+    </div>
+</main>
+
+<!-- LOGIN MODAL — shown when user clicks
+     "Proceed to Checkout" without being signed in -->
+<div class="auth-modal-backdrop hidden" id="auth-modal" role="dialog"
+     aria-modal="true" aria-label="Sign in to continue">
+
+    <div class="auth-modal-panel">
+
+        <!-- Close button -->
+        <button class="auth-modal-close" id="auth-modal-close" aria-label="Close">
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none"
+                 stroke="currentColor" stroke-width="1.8"
+                 stroke-linecap="round" stroke-linejoin="round">
+                <line x1="18" y1="6" x2="6" y2="18"/>
+                <line x1="6" y1="6" x2="18" y2="18"/>
+            </svg>
+        </button>
+
+        <p class="auth-modal-eyebrow">Almost there!</p>
+        <h2 class="auth-modal-title">Sign in to checkout</h2>
+
+        <!-- Tab switcher -->
+        <div class="auth-tabs">
+            <button class="auth-tab active" id="auth-tab-signin"
+                    aria-selected="true" aria-controls="auth-panel-signin">
+                Sign In
+            </button>
+            <button class="auth-tab" id="auth-tab-signup"
+                    aria-selected="false" aria-controls="auth-panel-signup">
+                Create Account
+            </button>
+        </div>
+
+        <!-- ── Sign In Panel ── -->
+        <div class="auth-panel" id="auth-panel-signin">
+            <form class="auth-form" id="modal-signin-form" novalidate>
+
+                <div class="auth-error-msg hidden" id="modal-signin-error" role="alert"></div>
+
+                <div class="auth-field">
+                    <label class="auth-label" for="modal-signin-email">Email Address</label>
+                    <input class="auth-input" type="email" id="modal-signin-email"
+                           name="email" placeholder="you@email.com"
+                           autocomplete="email" required />
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label" for="modal-signin-password">
+                        Password
+                        <a href="#" class="auth-forgot-link">Forgot password?</a>
+                    </label>
+                    <div class="auth-password-wrapper">
+                        <input class="auth-input" type="password" id="modal-signin-password"
+                               name="password" placeholder="Enter your password"
+                               autocomplete="current-password" required />
+                        <button type="button" class="auth-pw-toggle"
+                                aria-label="Show password"
+                                data-target="modal-signin-password">
+                            <svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-submit-btn">Sign In &amp; Checkout</button>
+
+                <p class="auth-switch">
+                    Don't have an account?
+                    <button type="button" class="auth-switch-link" data-target="signup">
+                        Create one
+                    </button>
+                </p>
+            </form>
+        </div>
+
+        <!-- ── Create Account Panel ── -->
+        <div class="auth-panel hidden" id="auth-panel-signup">
+            <form class="auth-form" id="modal-signup-form" novalidate>
+
+                <div class="auth-error-msg hidden" id="modal-signup-error" role="alert"></div>
+
+                <div class="auth-row">
+                    <div class="auth-field">
+                        <label class="auth-label" for="modal-signup-firstname">First Name</label>
+                        <input class="auth-input" type="text" id="modal-signup-firstname"
+                               name="firstName" placeholder="First name"
+                               autocomplete="given-name" required />
+                    </div>
+                    <div class="auth-field">
+                        <label class="auth-label" for="modal-signup-lastname">Last Name</label>
+                        <input class="auth-input" type="text" id="modal-signup-lastname"
+                               name="lastName" placeholder="Last name"
+                               autocomplete="family-name" required />
+                    </div>
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label" for="modal-signup-email">Email Address</label>
+                    <input class="auth-input" type="email" id="modal-signup-email"
+                           name="email" placeholder="you@email.com"
+                           autocomplete="email" required />
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label" for="modal-signup-password">Password</label>
+                    <div class="auth-password-wrapper">
+                        <input class="auth-input" type="password" id="modal-signup-password"
+                               name="password" placeholder="Create a password (min 8 chars)"
+                               autocomplete="new-password" required />
+                        <button type="button" class="auth-pw-toggle"
+                                aria-label="Show password"
+                                data-target="modal-signup-password">
+                            <svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="auth-field">
+                    <label class="auth-label" for="modal-signup-confirm">Confirm Password</label>
+                    <div class="auth-password-wrapper">
+                        <input class="auth-input" type="password" id="modal-signup-confirm"
+                               name="confirmPassword" placeholder="Confirm your password"
+                               autocomplete="new-password" required />
+                        <button type="button" class="auth-pw-toggle"
+                                aria-label="Show confirm password"
+                                data-target="modal-signup-confirm">
+                            <svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="auth-submit-btn">Create Account &amp; Checkout</button>
+
+                <p class="auth-switch">
+                    Already have an account?
+                    <button type="button" class="auth-switch-link" data-target="signin">
+                        Sign in
+                    </button>
+                </p>
+            </form>
+        </div>
+
+    </div>
+</div>
+<!-- ── End Login Modal ─────────────────────────── -->
+
+<!-- ── Footer ─── -->
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+        <nav class="footer-col" aria-label="Explore links">
+            <h3>Explore</h3>
+            <ul>
+                <li><span>How It Works</span></li>
+                <li><span>Refer Friends</span></li>
+                <li><span>Gift Cards</span></li>
+                <li><span>Student Discount</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company links">
+            <h3>Company</h3>
+            <ul>
+                <li><span>Our Story</span></li>
+                <li><span>Sustainability</span></li>
+                <li><span>Careers</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Help links">
+            <h3>Get Help</h3>
+            <ul>
+                <li><span>FAQs</span></li>
+                <li><span>Contact Us</span></li>
+                <li><span>Size Guide</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Shop links">
+            <h3>Shop</h3>
+            <ul>
+                <li><span>Holiday &amp; Party</span></li>
+                <li><span>Cultural &amp; Traditional</span></li>
+                <li><span>Wedding &amp; Formal</span></li>
+                <li><span>Browse All</span></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026. All rights reserved.</span>
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+    </div>
+</footer>
+
+<script src="cart.js"></script>
+
+<script>
+    document.getElementById('search-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrapper = e.currentTarget.closest('.search-wrapper');
+        wrapper.classList.toggle('open');
+        if (wrapper.classList.contains('open')) {
+            wrapper.querySelector('.search-input').focus();
+        }
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.search-wrapper.open')
+            .forEach(w => w.classList.remove('open'));
+    });
+</script>
+
+    <script src="chat-widget.js"></script>
+<script>
+  (function() {
+    var link = document.getElementById('account-icon-link');
+    if (!link) return;
+    var raw = localStorage.getItem('dtd_user');
+    if (!raw) return;
+    try {
+      var user = JSON.parse(raw);
+      var initial = (user.firstName || user.email || '').charAt(0).toUpperCase();
+      if (!initial) return;
+      link.href = 'account-information.html';
+      link.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5c3d2e;color:#fff;font-size:13px;font-weight:600;font-family:inherit;line-height:1;cursor:pointer;">' + initial + '</span>';
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sign In – Dress the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="login.css" />
+    <link rel="stylesheet" href="chat-widget.css" />
+</head>
+<body>
+
+<!-- ── Announcement Bar ─────────────────────────── -->
+<div class="announcement" role="banner">
+    $15 Off on First Order; Free Shipping
+</div>
+
+<!-- ── Site Header ──────────────────────────────── -->
+<header class="site-header" role="banner">
+    <div class="header-top">
+        <div class="site-logo">
+            <a href="index.html">
+                <h1>Dress the Day</h1>
+                <p class="tagline">- Rent the Moment -</p>
+            </a>
+        </div>
+        <nav class="header-icons" aria-label="Utility navigation">
+
+            <div class="search-wrapper">
+                <button aria-label="Search" id="search-toggle">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                    </svg>
+                </button>
+                <div class="search-dropdown" role="search">
+                    <input class="search-input" type="text" placeholder="Search styles…" aria-label="Search"/>
+                    <button class="search-submit" aria-label="Submit search">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <a href="cart.html" aria-label="Shopping cart">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </a>
+
+            <a href="account-information.html" aria-label="Account" id="account-icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+
+        </nav>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul role="list">
+            <li><a href="browse-all.html">Browse All</a></li>
+            <li><a href="holiday-party.html">Holiday &amp; Party</a></li>
+            <li><a href="cultural-traditional.html">Cultural &amp; Traditional</a></li>
+            <li><a href="wedding-formal.html">Wedding &amp; Formal</a></li>
+        </ul>
+    </nav>
+</header>
+
+
+<main>
+    <div class="login-wrapper">
+
+        <!-- Tab switcher: Sign In / Create Account -->
+        <div class="login-tabs" role="tablist">
+            <button class="login-tab active" id="tab-signin" role="tab"
+                    aria-selected="true" aria-controls="panel-signin">
+                Sign In
+            </button>
+            <button class="login-tab" id="tab-signup" role="tab"
+                    aria-selected="false" aria-controls="panel-signup">
+                Create Account
+            </button>
+        </div>
+
+        <!-- ── Sign In Panel ─────────────────────── -->
+        <div class="login-panel" id="panel-signin" role="tabpanel" aria-labelledby="tab-signin">
+
+            <p class="login-subtitle">Welcome back — sign in to your account.</p>
+
+            <!-- BACKEND: action="/login" method="POST" -->
+            <form class="login-form" id="signin-form" action="#" method="POST" novalidate>
+
+                <!-- BACKEND: render error here if login fails -->
+                <div class="login-error-msg hidden" id="signin-error" role="alert"></div>
+
+                <div class="login-field">
+                    <label class="login-label" for="signin-email">Email Address</label>
+                    <input class="login-input" type="email" id="signin-email"
+                           name="email" placeholder="you@email.com"
+                           autocomplete="email" required />
+                </div>
+
+                <div class="login-field">
+                    <label class="login-label" for="signin-password">
+                        Password
+                        <a href="#" class="forgot-link">Forgot password?</a>
+                    </label>
+                    <div class="password-wrapper">
+                        <input class="login-input" type="password" id="signin-password"
+                               name="password" placeholder="Enter your password"
+                               autocomplete="current-password" required />
+                        <button type="button" class="pw-toggle" aria-label="Show password"
+                                data-target="signin-password">
+                            <svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-submit-btn">Sign In</button>
+
+                <p class="login-switch">
+                    Don't have an account?
+                    <button type="button" class="switch-tab-link" data-target="signup">
+                        Create one
+                    </button>
+                </p>
+
+            </form>
+        </div>
+
+        <!-- ── Create Account Panel ──────────────── -->
+        <div class="login-panel hidden" id="panel-signup" role="tabpanel" aria-labelledby="tab-signup">
+
+            <p class="login-subtitle">Join Dress the Day and rent your next look.</p>
+
+            <!-- BACKEND: action="/signup" method="POST" -->
+            <form class="login-form" id="signup-form" action="#" method="POST" novalidate>
+
+                <!-- BACKEND: render error here if signup fails -->
+                <div class="login-error-msg hidden" id="signup-error" role="alert"></div>
+
+                <div class="login-row">
+                    <div class="login-field">
+                        <label class="login-label" for="signup-firstname">First Name</label>
+                        <input class="login-input" type="text" id="signup-firstname"
+                               name="firstName" placeholder="First name"
+                               autocomplete="given-name" required />
+                    </div>
+                    <div class="login-field">
+                        <label class="login-label" for="signup-lastname">Last Name</label>
+                        <input class="login-input" type="text" id="signup-lastname"
+                               name="lastName" placeholder="Last name"
+                               autocomplete="family-name" required />
+                    </div>
+                </div>
+
+                <div class="login-field">
+                    <label class="login-label" for="signup-email">Email Address</label>
+                    <input class="login-input" type="email" id="signup-email"
+                           name="email" placeholder="you@email.com"
+                           autocomplete="email" required />
+                </div>
+
+                <div class="login-field">
+                    <label class="login-label" for="signup-password">Password</label>
+                    <div class="password-wrapper">
+                        <input class="login-input" type="password" id="signup-password"
+                               name="password" placeholder="Create a password"
+                               autocomplete="new-password" required />
+                        <button type="button" class="pw-toggle" aria-label="Show password"
+                                data-target="signup-password">
+                            <svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="login-field">
+                    <label class="login-label" for="signup-confirm">Confirm Password</label>
+                    <div class="password-wrapper">
+                        <input class="login-input" type="password" id="signup-confirm"
+                               name="confirmPassword" placeholder="Confirm your password"
+                               autocomplete="new-password" required />
+                        <button type="button" class="pw-toggle" aria-label="Show confirm password"
+                                data-target="signup-confirm">
+                            <svg class="icon-svg" viewBox="0 0 24 24">
+                                <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/>
+                                <circle cx="12" cy="12" r="3"/>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+
+                <button type="submit" class="login-submit-btn">Create Account</button>
+
+                <p class="login-switch">
+                    Already have an account?
+                    <button type="button" class="switch-tab-link" data-target="signin">
+                        Sign in
+                    </button>
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+</main>
+
+<!-- ── Footer ───────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+        <nav class="footer-col" aria-label="Explore links">
+            <h3>Explore</h3>
+            <ul>
+                <li><span>How It Works</span></li>
+                <li><span>Refer Friends</span></li>
+                <li><span>Gift Cards</span></li>
+                <li><span>Student Discount</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company links">
+            <h3>Company</h3>
+            <ul>
+                <li><span>Our Story</span></li>
+                <li><span>Sustainability</span></li>
+                <li><span>Careers</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Help links">
+            <h3>Get Help</h3>
+            <ul>
+                <li><span>FAQs</span></li>
+                <li><span>Contact Us</span></li>
+                <li><span>Size Guide</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Shop links">
+            <h3>Shop</h3>
+            <ul>
+                <li><span>Holiday &amp; Party</span></li>
+                <li><span>Cultural &amp; Traditional</span></li>
+                <li><span>Wedding &amp; Formal</span></li>
+                <li><span>Browse All</span></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026. All rights reserved.</span>
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+    </div>
+</footer>
+
+<!-- ── Search toggle (same as all other pages) ── -->
+<script>
+    document.getElementById('search-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrapper = e.currentTarget.closest('.search-wrapper');
+        wrapper.classList.toggle('open');
+        if (wrapper.classList.contains('open')) {
+            wrapper.querySelector('.search-input').focus();
+        }
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.search-wrapper.open')
+            .forEach(w => w.classList.remove('open'));
+    });
+</script>
+
+<!-- ── Login page JS ─────────────────────────── -->
+<script src="login.js"></script>
+
+    <script src="chat-widget.js"></script>
+<script>
+  (function() {
+    var link = document.getElementById('account-icon-link');
+    if (!link) return;
+    var raw = localStorage.getItem('dtd_user');
+    if (!raw) return;
+    try {
+      var user = JSON.parse(raw);
+      var initial = (user.firstName || user.email || '').charAt(0).toUpperCase();
+      if (!initial) return;
+      link.href = 'account-information.html';
+      link.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5c3d2e;color:#fff;font-size:13px;font-weight:600;font-family:inherit;line-height:1;cursor:pointer;">' + initial + '</span>';
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

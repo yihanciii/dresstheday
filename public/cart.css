@@ -1,0 +1,483 @@
+/* ── Cart Layout: 2 columns ───────────────────────
+   [cart items / left]  |  [order summary / right] */
+.cart-layout {
+    display: grid;
+    grid-template-columns: 1fr 360px;
+    gap: 40px;
+    max-width: 1000px;
+    margin: 48px auto 80px;
+    padding: 0 40px;
+    align-items: start;
+}
+
+/* ── Cart Title ────────────────────────────────── */
+.cart-title {
+    font-size: clamp(24px, 3vw, 32px);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 32px;
+}
+
+/* ── Cart Item ─────────────────────────────────── */
+.cart-item {
+    display: grid;
+    grid-template-columns: 140px 1fr;
+    gap: 24px;
+    padding-bottom: 28px;
+}
+
+.cart-img-placeholder {
+    width: 140px;
+    aspect-ratio: 3 / 4;
+    background: linear-gradient(160deg, #ddd6cc 0%, #c0b4a0 100%);
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+.cart-item-img img {
+    width: 140px;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+    border-radius: 6px;
+    display: block;
+}
+
+/* Item details column */
+.cart-item-details {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.cart-item-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cart-item-scenario {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.cart-item-brand {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    letter-spacing: 0.03em;
+    margin-bottom: 2px;
+}
+
+.cart-remove-btn {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0;
+    transition: color var(--transition);
+}
+
+.cart-remove-btn:hover {
+    color: var(--brown-dark);
+}
+
+.cart-item-meta {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+.cart-meta-row {
+    display: flex;
+    gap: 8px;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text-dark);
+}
+.cart-meta-label {
+    font-weight: 700;
+    white-space: nowrap;
+}
+.cart-meta-value {
+    font-weight: 300;
+}
+
+.cart-item-price-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 4px;
+}
+.cart-item-retail {
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    text-decoration: line-through;
+}
+.cart-item-rental-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+.cart-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 4px 0 20px;
+}
+
+.continue-shopping-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 13px;
+    font-weight: 400;
+    color: var(--text-dark);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition);
+}
+.continue-shopping-link:hover { color: var(--brown-mid); }
+
+/* ── Order Summary Card ────────────────────────── */
+.order-summary {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 28px 24px;
+    background: var(--cream);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.order-summary-title {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--text-dark);
+    text-align: center;
+    margin-bottom: 4px;
+}
+
+.order-totals {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.order-total-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 13.5px;
+    font-weight: 300;
+    color: var(--text-dark);
+}
+
+.order-divider {
+    border: none;
+    border-top: 1px solid var(--border);
+    margin: 0;
+}
+
+.order-total-final-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.order-total-label {
+    font-size: 16px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+.order-total-amount {
+    font-size: 20px;
+    font-weight: 700;
+    color: var(--text-dark);
+}
+
+
+.checkout-cta-btn {
+    display: block;
+    width: 100%;
+    text-align: center;
+    padding: 16px;
+    background: var(--brown-dark);
+    color: #fffdf7;
+    font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    border-radius: var(--radius-sm);
+    border: none;
+    cursor: pointer;
+    transition: background var(--transition);
+}
+.checkout-cta-btn:hover { background: var(--brown-mid); }
+
+.payment-note {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    font-size: 12px;
+    font-weight: 300;
+    color: var(--text-light);
+    text-align: center;
+}
+
+/* ── Responsive ────────────────────────────────── */
+@media (max-width: 800px) {
+    .cart-layout {
+        grid-template-columns: 1fr;
+        padding: 0 20px;
+        margin-top: 32px;
+    }
+    .cart-right { order: -1; }
+}
+@media (max-width: 480px) {
+    .cart-item {
+        grid-template-columns: 100px 1fr;
+        gap: 16px;
+    }
+    .cart-img-placeholder,
+    .cart-item-img img { width: 100px; }
+}
+
+
+/* AUTH MODAL — login/signup popup before checkout */
+
+.auth-modal-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(52, 29, 22, 0.45);
+    backdrop-filter: blur(3px);
+    z-index: 500;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+.auth-modal-backdrop.hidden {
+    display: none;
+}
+
+.auth-modal-panel {
+    background: var(--cream);
+    border-radius: 12px;
+    padding: 40px 36px 36px;
+    width: 100%;
+    max-width: 460px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(52, 29, 22, 0.18);
+}
+
+/* Close button */
+.auth-modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 6px;
+    border-radius: 50%;
+    transition: color var(--transition), background var(--transition);
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+.auth-modal-close:hover {
+    color: var(--brown-dark);
+    background: var(--cream-warm);
+}
+
+/* Eyebrow + title */
+.auth-modal-eyebrow {
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--brown-mid);
+    margin-bottom: 6px;
+}
+.auth-modal-title {
+    font-size: clamp(20px, 3vw, 26px);
+    font-weight: 700;
+    color: var(--text-dark);
+    margin-bottom: 24px;
+}
+
+/* ── Modal Tabs ────────────────────────────────── */
+.auth-tabs {
+    display: flex;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 28px;
+}
+.auth-tab {
+    flex: 1;
+    padding: 12px 0;
+    font-family: var(--font-sans);
+    font-size: 13.5px;
+    font-weight: 400;
+    letter-spacing: 0.03em;
+    color: var(--text-light);
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    cursor: pointer;
+    transition: color var(--transition), border-color var(--transition);
+    margin-bottom: -1px;
+}
+.auth-tab:hover { color: var(--text-dark); }
+.auth-tab.active {
+    color: var(--text-dark);
+    font-weight: 700;
+    border-bottom-color: var(--brown-dark);
+}
+
+/* ── Modal Panels ──────────────────────────────── */
+.auth-panel.hidden { display: none; }
+
+/* ── Modal Form ────────────────────────────────── */
+.auth-form {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.auth-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 14px;
+}
+
+.auth-field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.auth-label {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--text-dark);
+    letter-spacing: 0.02em;
+}
+
+.auth-forgot-link {
+    font-size: 11.5px;
+    font-weight: 300;
+    color: var(--text-light);
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    transition: color var(--transition);
+}
+.auth-forgot-link:hover { color: var(--brown-mid); }
+
+.auth-input {
+    width: 100%;
+    padding: 11px 14px;
+    border: 1px solid var(--border);
+    border-radius: var(--radius-sm);
+    background: #ffffff;
+    font-family: var(--font-sans);
+    font-size: 13px;
+    font-weight: 300;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+.auth-input::placeholder { color: var(--text-light); }
+.auth-input:focus {
+    border-color: var(--brown-mid);
+    box-shadow: 0 0 0 3px rgba(180, 93, 46, 0.10);
+}
+
+.auth-password-wrapper {
+    position: relative;
+}
+.auth-password-wrapper .auth-input {
+    padding-right: 42px;
+}
+.auth-pw-toggle {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-light);
+    display: flex;
+    align-items: center;
+    padding: 4px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: color var(--transition);
+}
+.auth-pw-toggle:hover { color: var(--brown-mid); }
+
+.auth-error-msg {
+    padding: 10px 14px;
+    border: 1px solid #c0392b;
+    border-radius: var(--radius-sm);
+    background: #fdf0ee;
+    font-size: 12.5px;
+    font-weight: 300;
+    color: #c0392b;
+}
+.auth-error-msg.hidden { display: none; }
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: var(--brown-dark);
+    color: #fffdf7;
+    font-family: var(--font-sans);
+    font-size: 14px;
+    font-weight: 400;
+    letter-spacing: 0.04em;
+    border: none;
+    border-radius: var(--radius-sm);
+    cursor: pointer;
+    transition: background var(--transition);
+    margin-top: 2px;
+}
+.auth-submit-btn:hover { background: var(--brown-mid); }
+
+.auth-switch {
+    text-align: center;
+    font-size: 12.5px;
+    font-weight: 300;
+    color: var(--text-light);
+}
+.auth-switch-link {
+    background: none;
+    border: none;
+    font-family: var(--font-sans);
+    font-size: 12.5px;
+    font-weight: 400;
+    color: var(--text-dark);
+    cursor: pointer;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    padding: 0;
+    transition: color var(--transition);
+}
+.auth-switch-link:hover { color: var(--brown-mid); }
+
+/* ── Modal Responsive ──────────────────────────── */
+@media (max-width: 480px) {
+    .auth-modal-panel {
+        padding: 32px 20px 28px;
+    }
+    .auth-row {
+        grid-template-columns: 1fr;
+    }
+}

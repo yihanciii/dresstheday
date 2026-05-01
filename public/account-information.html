@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Account – Information – Dress the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="account.css" />
+    <link rel="stylesheet" href="chat-widget.css" />
+</head>
+<body>
+
+<div class="announcement" role="banner">
+    $15 Off on First Order; Free Shipping
+</div>
+
+<header class="site-header" role="banner">
+    <div class="header-top">
+        <div class="site-logo">
+            <a href="index.html">
+                <h1>Dress the Day</h1>
+                <p class="tagline">- Rent the Moment -</p>
+            </a>
+        </div>
+        <nav class="header-icons" aria-label="Utility navigation">
+
+            <div class="search-wrapper">
+                <button aria-label="Search" id="search-toggle">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                    </svg>
+                </button>
+                <div class="search-dropdown" role="search">
+                    <input class="search-input" type="text" placeholder="Search styles…" aria-label="Search"/>
+                    <button class="search-submit" aria-label="Submit search">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <a href="cart.html" aria-label="Shopping cart">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </a>
+
+            <a href="login.html" aria-label="Account" id="account-icon-link">《
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+
+        </nav>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul role="list">
+            <li><a href="browse-all.html">Browse All</a></li>
+            <li><a href="holiday-party.html">Holiday &amp; Party</a></li>
+            <li><a href="cultural-traditional.html">Cultural &amp; Traditional</a></li>
+            <li><a href="wedding-formal.html">Wedding &amp; Formal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+    <div class="account-layout">
+
+        <aside class="account-sidebar">
+            <h2 class="sidebar-username" id="sidebar-username">My Account</h2>
+            <hr class="sidebar-divider" />
+            <nav class="sidebar-nav" aria-label="Account navigation">
+                <a href="account-information.html" class="sidebar-link active">Information</a>
+                <a href="account-wishlist.html" class="sidebar-link">Wishlist</a>
+                <a href="account-returns.html" class="sidebar-link">Returns</a>
+                <a href="account-orders.html" class="sidebar-link">Order History</a>
+                <a href="account-settings.html" class="sidebar-link">Settings</a>
+            </nav>
+
+
+
+        </aside>
+
+        <div class="account-content">
+            <h2 class="account-page-title">Information</h2>
+
+            <section class="info-section" aria-labelledby="personal-heading">
+                <div class="info-section-header">
+                    <h3 id="personal-heading">Personal Information</h3>
+                    <button class="edit-btn">Edit</button>
+                </div>
+                <form class="info-form" action="#" method="POST">
+                    <div class="info-row">
+                        <div class="info-field">
+                            <label class="info-label" for="first-name">First Name</label>
+                            <input class="info-input" type="text" id="first-name" name="first_name" value="" placeholder="–" readonly />
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label" for="last-name">Last Name</label>
+                            <input class="info-input" type="text" id="last-name" name="last_name" value="" placeholder="–" readonly />
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-field">
+                            <label class="info-label" for="email">Email Address</label>
+                            <input class="info-input" type="email" id="email" name="email" value="" placeholder="–" readonly />
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label" for="phone">Phone Number</label>
+                            <input class="info-input" type="tel" id="phone" name="phone" value="" placeholder="–" readonly />
+                        </div>
+                    </div>
+                    <div class="info-row">
+                        <div class="info-field">
+                            <label class="info-label" for="dob">Date of Birth</label>
+                            <input class="info-input" type="text" id="dob" name="dob" value="" placeholder="–" readonly />
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label" for="size">Default Size</label>
+                            <input class="info-input" type="text" id="size" name="default_size" value="" placeholder="–" readonly />
+                        </div>
+                    </div>
+                    <div class="info-form-actions hidden">
+                        <button type="submit" class="save-btn">Save Changes</button>
+                        <button type="button" class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <hr class="info-divider" />
+
+            <section class="info-section" aria-labelledby="address-heading">
+                <div class="info-section-header">
+                    <h3 id="address-heading">Saved Address</h3>
+                    <button class="edit-btn">Edit</button>
+                </div>
+                <form class="info-form" action="#" method="POST">
+                    <div class="info-row info-row--full">
+                        <div class="info-field">
+                            <label class="info-label" for="street">Street Address</label>
+                            <input class="info-input" type="text" id="street" name="street" value="" placeholder="–" readonly />
+                        </div>
+                    </div>
+                    <div class="info-row info-row--full">
+                        <div class="info-field">
+                            <label class="info-label" for="apt">Apartment, Suite, etc.</label>
+                            <input class="info-input" type="text" id="apt" name="apt" value="" placeholder="–" readonly />
+                        </div>
+                    </div>
+                    <div class="info-row info-row--3">
+                        <div class="info-field">
+                            <label class="info-label" for="city">City</label>
+                            <input class="info-input" type="text" id="city" name="city" value="" placeholder="–" readonly />
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label" for="state">State</label>
+                            <input class="info-input" type="text" id="state" name="state" value="" placeholder="–" readonly />
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label" for="zip">Zip Code</label>
+                            <input class="info-input" type="text" id="zip" name="zip" value="" placeholder="–" readonly />
+                        </div>
+                    </div>
+                    <div class="info-form-actions hidden">
+                        <button type="submit" class="save-btn">Save Changes</button>
+                        <button type="button" class="cancel-btn">Cancel</button>
+                    </div>
+                </form>
+            </section>
+
+            <hr class="info-divider" />
+
+            <section class="info-section" aria-labelledby="password-heading">
+                <div class="info-section-header">
+                    <h3 id="password-heading">Password</h3>
+                    <button class="edit-btn">Edit</button>
+                </div>
+                <form class="info-form" action="#" method="POST">
+                    <div class="info-row">
+                        <div class="info-field">
+                            <label class="info-label" for="current-pw">Current Password</label>
+                            <input class="info-input" type="password" id="current-pw" value="••••••••" readonly />
+                        </div>
+                    </div>
+                    <div class="info-form-actions hidden">
+                        <div class="info-field">
+                            <label class="info-label" for="new-pw">New Password</label>
+                            <input class="info-input" type="password" id="new-pw" name="new_password" placeholder="New Password" />
+                        </div>
+                        <div class="info-field">
+                            <label class="info-label" for="confirm-pw">Confirm New Password</label>
+                            <input class="info-input" type="password" id="confirm-pw" name="confirm_password" placeholder="Confirm New Password" />
+                        </div>
+                        <div class="pw-action-btns">
+                            <button type="submit" class="save-btn">Save Changes</button>
+                            <button type="button" class="cancel-btn">Cancel</button>
+                        </div>
+                    </div>
+                </form>
+            </section>
+
+        </div>
+    </div>
+</main>
+
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+        <nav class="footer-col" aria-label="Explore links">
+            <h3>Explore</h3>
+            <ul>
+                <li><span>How It Works</span></li>
+                <li><span>Refer Friends</span></li>
+                <li><span>Gift Cards</span></li>
+                <li><span>Student Discount</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company links">
+            <h3>Company</h3>
+            <ul>
+                <li><span>Our Story</span></li>
+                <li><span>Sustainability</span></li>
+                <li><span>Careers</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Help links">
+            <h3>Get Help</h3>
+            <ul>
+                <li><span>FAQs</span></li>
+                <li><span>Contact Us</span></li>
+                <li><span>Size Guide</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Shop links">
+            <h3>Shop</h3>
+            <ul>
+                <li><span>Holiday &amp; Party</span></li>
+                <li><span>Cultural &amp; Traditional</span></li>
+                <li><span>Wedding &amp; Formal</span></li>
+                <li><span>Browse All</span></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026. All rights reserved.</span>
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+    </div>
+</footer>
+
+<script>
+    document.querySelectorAll('.edit-btn').forEach(btn => {
+        btn.addEventListener('click', () => {
+            const section = btn.closest('.info-section');
+            const inputs  = section.querySelectorAll('.info-input');
+            const actions = section.querySelector('.info-form-actions');
+            const isEditing = !inputs[0].readOnly;
+            if (isEditing) {
+                inputs.forEach(i => i.setAttribute('readonly', true));
+                actions.classList.add('hidden');
+                btn.textContent = 'Edit';
+            } else {
+                inputs.forEach(i => i.removeAttribute('readonly'));
+                actions.classList.remove('hidden');
+                btn.textContent = 'Cancel';
+                inputs[0].focus();
+            }
+        });
+    });
+</script>
+<script>
+    document.getElementById('search-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrapper = e.currentTarget.closest('.search-wrapper');
+        wrapper.classList.toggle('open');
+        if (wrapper.classList.contains('open')) {
+            wrapper.querySelector('.search-input').focus();
+        }
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.search-wrapper.open')
+            .forEach(w => w.classList.remove('open'));
+    });
+</script>
+<script src="account-information.js"></script>
+
+    <script src="chat-widget.js"></script>
+<script>
+  (function() {
+    try {
+      var user = JSON.parse(localStorage.getItem('dtd_user') || '{}');
+      var firstName = user.firstName || '';
+      var lastName  = user.lastName  || '';
+      var email     = user.email     || '';
+
+      // 1. Sidebar username: "First Last" or fallback to "My Account"
+      var nameEl = document.getElementById('sidebar-username');
+      if (nameEl && firstName) {
+          nameEl.textContent = (firstName + (lastName ? ' ' + lastName : '')).trim();
+      }
+
+      // 2. Account icon: show initial circle if logged in
+      var link = document.getElementById('account-icon-link');
+      if (link && firstName) {
+        var initial = firstName.charAt(0).toUpperCase();
+        link.href = 'account-information.html';
+        link.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5c3d2e;color:#fff;font-size:13px;font-weight:600;font-family:inherit;line-height:1;cursor:pointer;">' + initial + '</span>';
+      }
+    } catch(e) {}
+  })();
+</script>
+</body>
+</html>

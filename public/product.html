@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Razele Dress – Dress the Day</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="product.css" />
+    <link rel="stylesheet" href="cart.css" />
+    <link rel="stylesheet" href="chat-widget.css" />
+</head>
+<body>
+
+<!-- ── Announcement Bar ─────────────────────────── -->
+<div class="announcement" role="banner">
+    $15 Off on First Order; Free Shipping
+</div>
+
+<!-- ── Site Header ──────────────────────────────── -->
+<header class="site-header" role="banner">
+    <div class="header-top">
+        <div class="site-logo">
+            <a href="index.html">
+                <h1>Dress the Day</h1>
+                <p class="tagline">- Rent the Moment -</p>
+            </a>
+        </div>
+        <nav class="header-icons" aria-label="Utility navigation">
+
+            <div class="search-wrapper">
+                <button aria-label="Search" id="search-toggle">
+                    <svg class="icon-svg" viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="7"/>
+                        <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                    </svg>
+                </button>
+                <div class="search-dropdown" role="search">
+                    <input class="search-input" type="text" placeholder="Search styles…" aria-label="Search"/>
+                    <button class="search-submit" aria-label="Submit search">
+                        <svg class="icon-svg" viewBox="0 0 24 24">
+                            <circle cx="11" cy="11" r="7"/>
+                            <line x1="16.5" y1="16.5" x2="22" y2="22"/>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <a href="cart.html" aria-label="Shopping cart">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+                    <line x1="3" y1="6" x2="21" y2="6"/>
+                    <path d="M16 10a4 4 0 01-8 0"/>
+                </svg>
+            </a>
+
+            <a href="account-information.html" aria-label="Account" id="account-icon-link">
+                <svg class="icon-svg" viewBox="0 0 24 24">
+                    <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/>
+                    <circle cx="12" cy="7" r="4"/>
+                </svg>
+            </a>
+
+        </nav>
+    </div>
+    <nav class="main-nav" aria-label="Main navigation">
+        <ul role="list">
+            <li><a href="browse-all.html">Browse All</a></li>
+            <li><a href="holiday-party.html">Holiday &amp; Party</a></li>
+            <li><a href="cultural-traditional.html">Cultural &amp; Traditional</a></li>
+            <li><a href="wedding-formal.html">Wedding &amp; Formal</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+    <!-- ══════════════════════════════════════════════
+         PRODUCT DETAIL — 3-column grid:
+         [main image] [2 thumbs] [info panel]
+         ══════════════════════════════════════════════ -->
+    <section class="product-detail">
+
+        <!-- Col 1: main tall image -->
+        <div class="gallery-main">
+            <div class="img-placeholder"></div>
+        </div>
+
+        <!-- Col 3: product info -->
+        <div class="product-info-panel">
+
+            <p class="product-name-label">Razele Dress</p>
+
+            <h1 class="product-brand-heading">Reformation</h1>
+
+            <p class="product-pricing">
+                <span class="price-rental">Reserve for $55</span>
+                <span class="price-sep">|</span>
+                <span class="price-retail">$378 Original Retail</span>
+            </p>
+
+            <div class="product-rating">
+                <span class="stars">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star empty">★</span>
+                </span>
+                <span class="rating-text">4.0 &nbsp;(80 Reviews)</span>
+            </div>
+
+            <div class="rental-row">
+                <span class="rental-period">Rental Period: Up to 30 days</span>
+                <span class="rental-starting">Starting at $45</span>
+            </div>
+
+            <button class="date-picker-row" aria-label="Select rental dates">
+                <span class="date-field">Arrival Date</span>
+                <span class="date-divider"></span>
+                <span class="date-field">Return Date</span>
+                <svg class="calendar-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round">
+                    <rect x="3" y="4" width="18" height="18" rx="2"/>
+                    <line x1="16" y1="2" x2="16" y2="6"/>
+                    <line x1="8" y1="2" x2="8" y2="6"/>
+                    <line x1="3" y1="10" x2="21" y2="10"/>
+                </svg>
+            </button>
+
+            <div class="size-section">
+                <p class="size-label">Size:</p>
+                <div class="size-grid">
+                    <button class="size-btn unavailable">0</button>
+                    <button class="size-btn">2</button>
+                    <button class="size-btn">4</button>
+                    <button class="size-btn selected">6</button>
+                    <button class="size-btn">8</button>
+                    <button class="size-btn">10</button>
+                    <button class="size-btn">12</button>
+                </div>
+                <span class="size-guide-link">Size Guide</span>
+            </div>
+
+            <!-- Backup size —  -->
+            <div class="size-section">
+                <p class="size-label">
+                    Free Back Up Size
+                    <span class="size-optional">(Optional)
+                        <button class="info-btn" aria-label="What is backup size?">
+                            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                <circle cx="12" cy="12" r="10"/>
+                                <line x1="12" y1="8" x2="12" y2="12"/>
+                                <line x1="12" y1="16" x2="12.01" y2="16"/>
+                            </svg>
+                        </button>
+                    </span>
+                </p>
+                <div class="size-grid">
+                    <button class="size-btn unavailable">0</button>
+                    <button class="size-btn">2</button>
+                    <button class="size-btn">4</button>
+                    <button class="size-btn">6</button>
+                    <button class="size-btn selected">8</button>
+                    <button class="size-btn">10</button>
+                    <button class="size-btn">12</button>
+                </div>
+            </div>
+
+            <button class="checkout-btn">Check Out</button>
+
+        </div>
+    </section>
+
+    <!-- ── Reviews ──────────────────────────────────── -->
+    <section class="reviews-section" aria-labelledby="reviews-heading">
+        <h2 id="reviews-heading">Reviews</h2>
+
+        <!-- Summary cards — from database -->
+        <div class="review-summary-row">
+            <div class="review-summary-box">
+                <span class="summary-score">4.0</span>
+                <span class="stars">
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star filled">★</span>
+                    <span class="star empty">★</span>
+                </span>
+                <span class="summary-count">(80 Reviews)</span>
+            </div>
+            <div class="review-summary-box">
+                <span class="summary-label">Customers Say: <strong>Runs Small</strong></span>
+            </div>
+        </div>
+
+        <!-- Filter bar — always visible, JS teammate wires up filter logic -->
+        <div class="review-filters">
+            <h3 class="filter-heading">Filter Reviews</h3>
+            <div class="filter-row">
+                <div class="filter-group">
+                    <label class="filter-label" for="star-filter">Star Rating</label>
+                    <select class="filter-select" id="star-filter">
+                        <option>All Ratings</option>
+                        <option>5 Stars</option>
+                        <option>4 Stars</option>
+                        <option>3 Stars</option>
+                        <option>2 Stars</option>
+                        <option>1 Star</option>
+                    </select>
+                </div>
+                <div class="filter-group">
+                    <label class="filter-label" for="body-filter">Body Type</label>
+                    <select class="filter-select" id="body-filter">
+                        <option>All Body Types</option>
+                        <option>Slender</option>
+                        <option>Athletic</option>
+                        <option>Curvy</option>
+                        <option>Plus Size</option>
+                    </select>
+                </div>
+            </div>
+            <button class="reset-filters-btn">Reset All Filters</button>
+        </div>
+
+        <hr class="review-divider" />
+
+        <!-- Review cards — dynamically rendered by item-detail.js -->
+        <div class="review-card" style="display:none"></div>
+
+    </section>
+
+    <!-- ── Product Details — always expanded ────────── -->
+    <section class="product-details-section" aria-labelledby="details-heading">
+        <h2 id="details-heading">Product Details</h2>
+        <div class="details-block">
+            <h3>Size &amp; Fit</h3>
+            <ul>
+                <li>Asymmetric neckline, side slit.</li>
+                <li>The model is wearing a size 2 and is 5'9.5", 24" waist, 35.5" hips, 30.5" bust.</li>
+            </ul>
+        </div>
+        <div class="details-block">
+            <h3>Material &amp; Care</h3>
+            <ul>
+                <li>This is a deadstock woven fabric made from 58% Viscose and 42% Rayon. Deadstock is aging, excess, or over-ordered fabric. Dry clean only.</li>
+                <li>We buy verified aging, leftover, and over-ordered fabric from factories, other designers and fabric warehouses, called deadstock. This allows us to reuse and divert these materials from the landfill and into your closet.</li>
+                <li>Sustainably made in Vietnam.</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- ── More Like This —  ── -->
+    <section class="more-like-this" aria-labelledby="more-heading">
+        <h2 id="more-heading">More Wedding &amp; Formal Dress like this</h2>
+        <div class="more-grid">
+            <article class="product-card">
+                <div class="card-img"><div class="img-placeholder"></div></div>
+                <div class="card-info">
+                    <p class="card-name">Product Name</p>
+                    <p class="card-meta"><span class="brand">Brand</span><span class="sep"> | </span>Retail $000</p>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="card-img"><div class="img-placeholder"></div></div>
+                <div class="card-info">
+                    <p class="card-name">Product Name</p>
+                    <p class="card-meta"><span class="brand">Brand</span><span class="sep"> | </span>Retail $000</p>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="card-img"><div class="img-placeholder"></div></div>
+                <div class="card-info">
+                    <p class="card-name">Product Name</p>
+                    <p class="card-meta"><span class="brand">Brand</span><span class="sep"> | </span>Retail $000</p>
+                </div>
+            </article>
+            <article class="product-card">
+                <div class="card-img"><div class="img-placeholder"></div></div>
+                <div class="card-info">
+                    <p class="card-name">Product Name</p>
+                    <p class="card-meta"><span class="brand">Brand</span><span class="sep"> | </span>Retail $000</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+</main>
+
+<!-- ── Footer ───────────────────────────────────── -->
+<footer class="site-footer" role="contentinfo">
+    <div class="footer-grid">
+        <nav class="footer-col" aria-label="Explore links">
+            <h3>Explore</h3>
+            <ul>
+                <li><span>How It Works</span></li>
+                <li><span>Refer Friends</span></li>
+                <li><span>Gift Cards</span></li>
+                <li><span>Student Discount</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Company links">
+            <h3>Company</h3>
+            <ul>
+                <li><span>Our Story</span></li>
+                <li><span>Sustainability</span></li>
+                <li><span>Careers</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Help links">
+            <h3>Get Help</h3>
+            <ul>
+                <li><span>FAQs</span></li>
+                <li><span>Contact Us</span></li>
+                <li><span>Size Guide</span></li>
+            </ul>
+        </nav>
+        <nav class="footer-col" aria-label="Shop links">
+            <h3>Shop</h3>
+            <ul>
+                <li><span>Holiday &amp; Party</span></li>
+                <li><span>Cultural &amp; Traditional</span></li>
+                <li><span>Wedding &amp; Formal</span></li>
+                <li><span>Browse All</span></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="footer-bottom">
+        <span>&copy; 2026. All rights reserved.</span>
+        <span>Terms of Service</span>
+        <span>Privacy Policy</span>
+    </div>
+</footer>
+
+<script>
+    document.getElementById('search-toggle')?.addEventListener('click', (e) => {
+        e.stopPropagation();
+        const wrapper = e.currentTarget.closest('.search-wrapper');
+        wrapper.classList.toggle('open');
+        if (wrapper.classList.contains('open')) {
+            wrapper.querySelector('.search-input').focus();
+        }
+    });
+    document.addEventListener('click', () => {
+        document.querySelectorAll('.search-wrapper.open')
+            .forEach(w => w.classList.remove('open'));
+    });
+</script>
+<script src="calendar.js?v=3"></script>
+<script src="item-detail.js?v=3"></script>
+    <script src="chat-widget.js"></script>
+<script>
+  (function() {
+    var link = document.getElementById('account-icon-link');
+    if (!link) return;
+    var raw = localStorage.getItem('dtd_user');
+    if (!raw) return;
+    try {
+      var user = JSON.parse(raw);
+      var initial = (user.firstName || user.email || '').charAt(0).toUpperCase();
+      if (!initial) return;
+      link.href = 'account-information.html';
+      link.innerHTML = '<span style="display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#5c3d2e;color:#fff;font-size:13px;font-weight:600;font-family:inherit;line-height:1;cursor:pointer;">' + initial + '</span>';
+    } catch(e) {}
+  })();
+</script>
+</body>
+
+</html>
