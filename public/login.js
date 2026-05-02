@@ -1,3 +1,8 @@
+// ─── API base ─────────────────────────────────────────────────────────────────
+// Empty string => relative URLs => fetch hits whatever origin served this page.
+// Locally that's http://localhost:3000; in production it's https://dresstheday.style.
+const API_BASE = '';
+
 // ─── Tab switching ────────────────────────────────────────────────────────────
 const tabs   = document.querySelectorAll('.login-tab');
 const panels = document.querySelectorAll('.login-panel');
@@ -58,7 +63,7 @@ function redirectAfterLogin() {
 // Checks the backend session so we don't show login to someone who's already in.
 (async () => {
   try {
-    const res = await fetch('http://localhost:3000/api/users/me', {
+    const res = await fetch(`${API_BASE}/api/users/me`, {
       credentials: 'include',
     });
     if (res.ok) {
@@ -87,7 +92,7 @@ document.getElementById('signin-form')?.addEventListener('submit', async (e) => 
   if (!isValidEmail(email)) { showError(errorEl, 'Please enter a valid email address.'); return; }
 
   try {
-    const res = await fetch('http://localhost:3000/api/users/login', {
+    const res = await fetch(`${API_BASE}/api/users/login`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',   // ← sends/receives session cookie
@@ -134,7 +139,7 @@ document.getElementById('signup-form')?.addEventListener('submit', async (e) => 
   if (password !== confirmPassword) { showError(errorEl, 'Passwords do not match.'); return; }
 
   try {
-    const res = await fetch('http://localhost:3000/api/users/register', {
+    const res = await fetch(`${API_BASE}/api/users/register`, {
       method:  'POST',
       headers: { 'Content-Type': 'application/json' },
       credentials: 'include',   // ← sends/receives session cookie
