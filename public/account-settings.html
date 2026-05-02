@@ -259,7 +259,7 @@
 <script>
   async function handleLogout() {
     try {
-      await fetch('http://localhost:3000/api/users/logout', {
+        await fetch('/api/users/logout', {
         method: 'POST',
         credentials: 'include',
       });
